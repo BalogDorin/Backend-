@@ -1,0 +1,13 @@
+<h2>
+  Add New Picture
+</h2>
+
+
+<input style="display: none"
+   id="fisiere" name="fisiere"  type="file"
+   (change)="onFileChanged($event)"
+  #fileInput multiple>
+  
+<button (click)="fileInput.click()">Select File</button>
+<button (click)="save()">Save</button>
+<p *ngIf="errorMessage">{{errorMessage}}</p>

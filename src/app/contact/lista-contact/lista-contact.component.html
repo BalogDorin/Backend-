@@ -1,0 +1,24 @@
+
+
+<ul *ngFor="let contact of contacts  ">
+
+  <li >
+      {{contact.id}}  </li>
+
+      <li >
+        {{contact.nume}}  </li>
+
+        <li >
+          {{contact.prenume}}  </li>
+
+          <li >
+            {{contact.email}}  </li>
+
+            <li >
+              {{contact.comment}}  </li>
+
+<button (click)="delete(contact.id)">Delete</button>
+
+     
+
+</ul>

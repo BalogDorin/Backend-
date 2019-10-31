@@ -1,0 +1,60 @@
+<!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark" *ngIf="currentUser">
+  <div class="navbar-nav">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+
+      <a class="nav-item nav-link" routerLink="/">Home</a>
+      <a class="nav-item nav-link" routerLink="/produs-add">Adauga Produs</a>
+      <a class="nav-item nav-link" routerLink="/produs-update/7B9EED13-69F2-446F-AC78-7A7DD826CF18">Update Produs</a>
+      <a class="nav-item nav-link" routerLink="/produs-list/categorie">Lista dupa Categorie</a>
+      <a class="nav-item nav-link" routerLink="/produs-prezentare/1DEBFE96-23A6-4390-BCD5-0213B00C7E8C">Descriere</a>
+      <a class="nav-item nav-link" routerLink="/admin" *ngIf="isAdmin">Admin</a>
+      <a class="nav-item nav-link" (click)="logout()">Logout</a>
+  </div>
+  </div>
+</nav>
+
+-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Vini's style</a>
+    <button class="navbar-toggler btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed"
+        aria-controls="navbarTogglerDemo02">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02" [ngbCollapse]="isCollapsed">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-item nav-link" routerLink="/">Home</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-item nav-link" routerLink="/produs-add" *ngIf="isAdmin">Adauga Produs</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-item nav-link" routerLink="/produs-list/costume">Costume</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-item nav-link" routerLink="/produs-list/camasi">Camasi</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-item nav-link" routerLink="/produs-list/paltoane">Paltoane</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-item nav-link" routerLink="/produs-list/papioane">Papioane</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-item nav-link" routerLink="/contact-add">Contact</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-item nav-link" routerLink="/admin" *ngIf="isAdmin">Admin</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-item nav-link" (click)="logout()">Logout</a>
+
+        </ul>
+
+    </div>
+</nav>
+<router-outlet></router-outlet>

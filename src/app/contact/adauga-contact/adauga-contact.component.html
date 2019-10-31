@@ -1,0 +1,83 @@
+<h2>
+  Add New Client
+</h2>
+<div class="container">
+    <div class="row">
+      <div class="col-sm">
+        One of three columns
+      </div>
+      <div class="col-sm">
+
+<form *ngIf="formGroup " [formGroup]="formGroup">
+<div class="form-group">
+    <div class="example-container">
+        <div>Nume</div>
+  
+        <mat-form-field class="form-control" id="distanceInput">
+  
+            <input matInput placeholder=""   formControlName="nume" type="text">            
+            <mat-error *ngIf="formGroup.get('nume').touched && formGroup.get('nume').errors && formGroup.get('nume').errors.required">
+              Nume is required!
+            </mat-error>
+  
+        </mat-form-field><br>
+  
+        <div>Prenume</div>
+  
+        <mat-form-field class="form-control" id="distanceInput">
+  
+          <input matInput placeholder=""  formControlName="prenume" type="text">            
+          <mat-error *ngIf="formGroup.get('prenume').touched && formGroup.get('prenume').errors && formGroup.get('prenume').errors.required">
+            Prenume is required!
+          </mat-error>
+  
+      </mat-form-field><br>
+      <div>Email</div>
+  
+        <mat-form-field class="form-control" id="distanceInput">
+  
+          <input matInput placeholder=""  formControlName="email" type="text">            
+          <mat-error *ngIf="formGroup.get('email').touched && formGroup.get('email').errors && formGroup.get('email').errors.required">
+            Email is required!
+          </mat-error>
+  
+      </mat-form-field><br>
+  
+      <div>Comment</div>
+  
+      <mat-form-field class="form-control" id="distanceInput">
+  
+        <input matInput placeholder=""  formControlName="comment" type="text">            
+        <mat-error *ngIf="formGroup.get('comment').touched && formGroup.get('comment').errors && formGroup.get('comment').errors.required">
+          Comment is required!
+        </mat-error>
+  
+    </mat-form-field><br>
+  
+    
+
+
+  </div>
+
+  <!--<div class="example-button-row">
+      <button mat-raised-button color="primary" (click)="save()">Add</button>
+  </div>
+
+  <div class="example-button-row">
+      <button mat-raised-button color="primary" (click)="cancel()">Cancel</button>
+  </div>-->
+
+  <button class="btn btn-primary btn-raised " (click)="save()" >Add</button>
+  <button type="submit" class="btn btn-primary btn-raised" (click)="cancel()">Cancel</button>
+  <mat-error *ngIf="errorMessage">
+      {{errorMessage}}
+  </mat-error>
+</div>
+</form>
+
+</div>
+    <div class="col-sm">
+      One of three columns
+    </div>
+    </div>
+    </div>

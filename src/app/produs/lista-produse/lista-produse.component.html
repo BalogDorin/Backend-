@@ -1,0 +1,56 @@
+<div class="row">
+
+    <div *ngFor="let produs of produse" class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+        <mdb-card>
+
+            <!--Card image-->
+            <div class="view overlay waves-light" mdbWavesEffect>
+                <img class="img-fluid" src="{{produs.caleFolder}}/0.png" (click)="redirect(produs.id)">
+                <a>
+                    <div class="mask rgba-white-slight"></div>
+                </a>
+                <button *ngIf="userFromApi!= null" (click)="delete(produs.id)">Delete</button>
+                <button *ngIf="userFromApi!= null" (click)="redirectUpdate(produs.id)">Update</button>
+
+
+            </div>
+            <!--/.Card image-->
+
+            <!--Card content-->
+            <mdb-card-body>
+                <a class="activator px-3 mr-2">
+                    <mdb-icon fas icon="share-alt"></mdb-icon>
+                </a>
+
+                <!--Title-->
+                <mdb-card-title>
+                    <h4>{{produs.titlu}}</h4>
+                </mdb-card-title>
+
+                <hr>
+
+                <!--Text-->
+                <mdb-card-text>
+                    {{produs.descriere}}
+                </mdb-card-text>
+
+                <a class="link-text">
+                    <h5 class="waves-light" mdbWavesEffect>Read more
+                        <mdb-icon fas icon="chevron-right" class="waves-light" mdbWavesEffect></mdb-icon>
+                    </h5>
+                </a>
+            </mdb-card-body>
+            <!--/.Card content-->
+        </mdb-card>
+        <!--/.Card-->
+    </div>
+
+
+</div>
+<!-- <pagination-controls class="pagination" (pageChange)="p = $event"></pagination-controls> -->
+
+
+
+<footer class="footer">
+    <p>All rights reserved</p>
+</footer>

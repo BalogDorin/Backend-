@@ -1,0 +1,76 @@
+<ngb-carousel *ngIf="images" interval="100000" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+    <ng-template ngbSlide *ngFor="let slide of slides">
+        <div class="picsum-img-wrapper">
+            <img class="image-slide" [src]="slide.image" alt="Random slide">
+
+        </div>
+        <div class="carousel-caption">
+            <h3>No mouse navigation</h3>
+            <p>This carousel hides navigation arrows and indicators.</p>
+        </div>
+
+    </ng-template>
+
+</ngb-carousel>
+
+<hr>
+
+<!--Card-->
+<div class="row">
+    <!-- <div *ngFor="let produs of produse | paginate: { itemsPerPage: 12, currentPage: {{pageNumber}} }" class="col-xl-3 col-lg-3 col-md-6 col-sm-12"> -->
+
+    <div *ngFor="let produs of produse" class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+        <mdb-card>
+
+            <!--Card image-->
+            <div class="view overlay waves-light" mdbWavesEffect>
+                <img class="img-fluid" src="{{produs.caleFolder}}/0.png" (click)="redirect(produs.id)">
+                <button *ngIf="userFromApi!= null" (click)="delete(produs.id)">Delete</button>
+                <button *ngIf="userFromApi!= null" (click)="redirectUpdate(produs.id)">Update</button>
+
+
+                <a>
+                    <div class="mask rgba-white-slight"></div>
+                </a>
+            </div>
+            <!--/.Card image-->
+
+            <!--Card content-->
+            <mdb-card-body>
+                <a class="activator px-3 mr-2">
+                    <mdb-icon fas icon="share-alt"></mdb-icon>
+                </a>
+
+                <!--Title-->
+                <mdb-card-title>
+                    <h4>{{produs.titlu}}</h4>
+                </mdb-card-title>
+
+                <hr>
+
+                <!--Text-->
+                <mdb-card-text>
+                    {{produs.descriere}}
+                </mdb-card-text>
+
+                <a class="link-text">
+                    <h5 class="waves-light" mdbWavesEffect>Read more
+                        <mdb-icon fas icon="chevron-right" class="waves-light" mdbWavesEffect></mdb-icon>
+                    </h5>
+                </a>
+            </mdb-card-body>
+            <!--/.Card content-->
+        </mdb-card>
+        <!--/.Card-->
+    </div>
+
+
+</div>
+<span>p</span>
+<!-- <pagination-controls class="pagination" (pageChange)="onChangePage($event)"></pagination-controls> -->
+
+
+
+<footer class="footer">
+    <p>All rights reserved</p>
+</footer>

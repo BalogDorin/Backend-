@@ -1,0 +1,110 @@
+<h2>
+ Update Produs
+</h2>
+<div class="container">
+    <div class="row">
+      <div class="col-sm">
+        One of three columns
+      </div>
+      <div class="col-sm">
+
+<form *ngIf="formGroup " [formGroup]="formGroup">
+
+  <div class="example-container">
+      <div>Pret</div>
+
+      <mat-form-field class="form-control" id="distanceInput">
+
+          <input matInput placeholder="" formControlName="pret" type="text">            
+          <mat-error *ngIf="formGroup.get('pret').touched && formGroup.get('pret').errors && formGroup.get('pret').errors.required">
+            Pret is required!
+          </mat-error>
+
+      </mat-form-field><br>
+
+      <div>Pret Redus</div>
+
+      <mat-form-field class="form-control" id="distanceInput">
+
+        <input matInput placeholder="" formControlName="pretRedus" type="text">            
+        <mat-error *ngIf="formGroup.get('pretRedus').touched && formGroup.get('pretRedus').errors && formGroup.get('pretRedus').errors.required">
+          PretRedus is required!
+        </mat-error>
+
+    </mat-form-field><br>
+    <div>Descriere</div>
+
+      <mat-form-field class="form-control" id="distanceInput">
+
+        <input matInput placeholder="" formControlName="descriere" type="text">            
+        <mat-error *ngIf="formGroup.get('descriere').touched && formGroup.get('descriere').errors && formGroup.get('descriere').errors.required">
+          Descriere is required!
+        </mat-error>
+
+    </mat-form-field><br>
+
+    <div>Marime</div>
+
+    <mat-form-field class="form-control" id="distanceInput">
+
+      <input matInput placeholder="" formControlName="marime" type="text">            
+      <mat-error *ngIf="formGroup.get('marime').touched && formGroup.get('marime').errors && formGroup.get('marime').errors.required">
+        Marime is required!
+      </mat-error>
+
+  </mat-form-field><br>
+
+  <div>Titlu</div>
+
+  <mat-form-field class="form-control" id="distanceInput">
+
+    <input matInput placeholder="" formControlName="titlu" type="text">            
+    <mat-error *ngIf="formGroup.get('titlu').touched && formGroup.get('titlu').errors && formGroup.get('titlu').errors.required">
+        Titlu is required!
+    </mat-error>
+
+</mat-form-field><br>
+
+<div>CUloare</div>
+
+<mat-form-field class="form-control" id="distanceInput">
+
+  <input matInput placeholder="" formControlName="culoare" type="text">            
+  <mat-error *ngIf="formGroup.get('culoare').touched && formGroup.get('culoare').errors && formGroup.get('culoare').errors.required">
+    Culoare is required!
+  </mat-error>
+
+</mat-form-field><br>
+
+<div>Categorie</div>
+
+<mat-form-field class="form-control" id="distanceInput">
+
+  <input matInput placeholder="" formControlName="categorie" type="text">            
+  <mat-error *ngIf="formGroup.get('categorie').touched && formGroup.get('categorie').errors && formGroup.get('categorie').errors.required">
+    Categorie is required!
+  </mat-error>
+
+</mat-form-field><br>
+
+
+  </div>
+
+  <div  class="btn-group">
+      <button class="example-button-row btn btn-primary btn-raised" color="primary" (click)="update()">Update</button>
+
+      <button class="example-button-row btn btn-primary btn-raised" color="primary" (click)="cancel()">Cancel</button>
+  </div>
+  
+  <mat-error *ngIf="errorMessage">
+      {{errorMessage}}
+  </mat-error>
+
+</form>
+</div>
+<div class="col-sm">
+    One of three columns
+  </div>
+  </div>
+  </div>
+  
